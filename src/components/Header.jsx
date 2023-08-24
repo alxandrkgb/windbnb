@@ -122,7 +122,7 @@ return (
                 </div>
               )}
             </div>
-            <div className="md:w-[34%] md:h-full md:border-r-2 rounded-b-2xl border-b-2 flex justify-start md:pl-5 pl-5 md:border-0 w-full" onClick={guestOptions}>
+            <div className="md:w-[34%] md:h-full md:border-r-2 border-b-2 flex justify-start md:pl-5 pl-5 md:border-0 w-full" onClick={guestOptions}>
               <label className="text-zinc-800 text-[9px] font-extrabold pt-3">GUESTS</label>
               <button className="ml-[-35px] flex items-center md:pt-5 pt-7 md:pb-2 pb-2">{formatGuestButtonText()}</button>
               {showGuestOptions && (
