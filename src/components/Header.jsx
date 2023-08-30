@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faLocationDot, faXmark, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import Apartments from './Apartments';
 
 
 export default function Header() {
@@ -54,6 +55,13 @@ export default function Header() {
     return `${adultText} ${childText}`;
   };
 
+  const searchHomes = () => {
+    setshowOtherSearchBar(false);
+    setshowSearchBar(true);
+
+    
+  };
+
 
 return ( 
     <div class=" flex flex-col md:flex-row justify-between min-h-[10vh] md:items-center px-5 md:px-[90px] pt-[30px]">
@@ -88,7 +96,7 @@ return (
           </div>
       )}
       {showOtherSearchBar ? (
-        <div className="w-full md:h-[460px] bg-white z-10 flex justify-center pt-[70px] h-[500px]">
+        <div className="w-full md:h-[460px] bg-white flex justify-center pt-[70px] h-[500px]">
           <div className="w-[80%] md:h-[60px] bg-white rounded-2xl shadow flex items-center md:flex-row flex-col">
             <div className="md:w-[34%] md:h-full md:border-r-2 flex md:justify-start pl-5 w-full border-b-2 md:border-0" onClick={locationList}>
               <label className="text-zinc-800 text-[9px] font-extrabold pt-3">LOCATIONS</label>
@@ -175,7 +183,7 @@ return (
               )}
             </div>
             <div className="md:w-[32%] md:h-full flex justify-center mt-60 md:mt-0 w-full">
-              <button className="bg-rose-500 rounded-2xl shadow text-zinc-100 font-bold w-[127px] h-12 md:h-full">
+              <button className="bg-rose-500 rounded-2xl shadow text-zinc-100 font-bold w-[127px] h-12 md:h-full" onClick={searchHomes}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#f2f2f2"}} /> Search
               </button>
             </div>

@@ -2,12 +2,10 @@
 export default {
   content: [
     "./index.html",
-    "./src/components/Header.jsx",
-    ".src/components/Apartments.jsx"
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
   },
   plugins: [],
 }
-
