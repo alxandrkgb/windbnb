@@ -64,24 +64,24 @@ export default function Header() {
 
 
 return ( 
-    <div class=" flex flex-col md:flex-row justify-between min-h-[10vh] md:items-center px-5 md:px-[90px] pt-[30px]">
+    <div className=" flex flex-col md:flex-row justify-between min-h-[10vh] md:items-center px-5 md:px-[90px] pt-[30px]">
       {showSearchBar && (
-      <div class=" mb-[3vh] md:mb-0">
+      <div className=" mb-[3vh] md:mb-0">
         <img src=".\src\assets\logo.png" alt="logo" />
       </div>
       )}
       {showSearchBar ? (
-      <div class=" shadow-md border rounded-[8px] flex items-center h-[55px] w-[90vw] md:w-[30vw] " >
-        <div class=" w-[50%] h-full border-r-2 flex items-center justify-center" onClick={locationList}>
-          <button class="text-zinc-800 text-sm font-normal" >{selectedLocation}</button>
+      <div className=" shadow-md border rounded-[8px] flex items-center h-[55px] w-[90vw] md:w-[30vw] " >
+        <div className=" w-[50%] h-full border-r-2 flex items-center justify-center" onClick={locationList}>
+          <button className="text-zinc-800 text-sm font-normal" >{selectedLocation}</button>
         </div>
 
-        <div class="w-[30%] h-full border-r-2 flex items-center justify-center" onClick={guestOptions}>
-            <button class="text-stone-300 text-sm font-normal">Add guests</button>
+        <div className="w-[30%] h-full border-r-2 flex items-center justify-center" onClick={guestOptions}>
+            <button className="text-stone-300 text-sm font-normal">Add guests</button>
         </div>
 
-        <div class="w-[20%] h-[55px]">
-        <button type="submit" class="flex items-center justify-center h-full w-full p-3" >
+        <div className="w-[20%] h-[55px]">
+        <button type="submit" className="flex items-center justify-center h-full w-full p-3" >
         <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" style={{color: "#eb5757",}} />
         </button>
         </div>
@@ -134,7 +134,7 @@ return (
               <label className="text-zinc-800 text-[9px] font-extrabold pt-3">GUESTS</label>
               <button className="ml-[-35px] flex items-center md:pt-5 pt-7 md:pb-2 pb-2">{formatGuestButtonText()}</button>
               {showGuestOptions && (
-                <div className="absolute mt-3 bg-transparent rounded-md shadow-md mt-[80px] md:w-[23%] md:ml-[-15px] ml-[-18px] w-[71%]">
+                <div className="absolute bg-transparent rounded-md shadow-md mt-[80px] md:w-[23%] md:ml-[-15px] ml-[-18px] w-[71%]">
                   <div className="flex px-4 py-2 flex-col">
                     <div>
                       <label className="text-zinc-800 text-sm font-extrabold">Adults</label> <br />

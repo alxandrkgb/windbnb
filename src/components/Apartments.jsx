@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import stays from '../data/stays.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
