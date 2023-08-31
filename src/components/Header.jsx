@@ -8,7 +8,7 @@ import Apartments from './Apartments';
 export default function Header() {
   const [showSearchBar, setshowSearchBar] = useState(true);
   const [showOtherSearchBar, setshowOtherSearchBar] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState("Helsinki, Finland");
+  const [selectedLocation, setSelectedLocation] = useState("Pick a Location");
   const [showLocationOptions, setShowLocationOptions] = useState(false);
   const [showGuestOptions, setShowGuestOptions] = useState(false);
   const [adultCount, setAdultCount] = useState(0);
@@ -73,7 +73,7 @@ return (
       {showSearchBar ? (
       <div class=" shadow-md border rounded-[8px] flex items-center h-[55px] w-[90vw] md:w-[30vw] " >
         <div class=" w-[50%] h-full border-r-2 flex items-center justify-center" onClick={locationList}>
-          <button class="text-zinc-800 text-sm font-normal" >Helsinki, Finland </button>
+          <button class="text-zinc-800 text-sm font-normal" >{selectedLocation}</button>
         </div>
 
         <div class="w-[30%] h-full border-r-2 flex items-center justify-center" onClick={guestOptions}>
