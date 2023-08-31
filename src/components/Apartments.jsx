@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import stays from '../data/stays.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -38,12 +39,12 @@ export default function Apartments () {
         <div className='mt-[80px]'>
             <div className="flex items-center justify-between md:px-24 px-3 whitespace-nowrap">
                 <h1 className='text-zinc-800 text-2xl font-bold'>Stays in Finland</h1>
-                <p className='text-neutral-600 text-sm font-medium'>{stays.length}+ stays</p>
+                <p className='text-neutral-600 text-sm font-medium'>{stays.length - 2}+ stays</p>
             </div>
             <div className='grid gap-8  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 2xl:gap-10 md:mx-24 mx-3'>
                 {stays.map((stay, idx) => (
-                    <Homes key={`${stay.title}-${idx}`} stay={stay} />
-                ))}
+  <Homes key={`${stay.title}-${idx}`} stay={stay} />
+))}
             </div>
         </div>
     );
