@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import ReactDOM from 'react-dom'
+import React, { useState, useRef, useContext } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faLocationDot, faXmark, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import Apartments from './Apartments';
+import stays from '../data/stays.json';
+import { ApartmentContext } from "./ApartmentsContext";
+
 
 
 export default function Header() {
@@ -13,6 +14,8 @@ export default function Header() {
   const [showGuestOptions, setShowGuestOptions] = useState(false);
   const [adultCount, setAdultCount] = useState(0);
   const [childCount, setChildCount] = useState(0);
+  const currentLocation = useRef();
+  const {currentHomes, updateHomes} = useContext(ApartmentContext);
 
 
   const locationList = () => {
@@ -59,7 +62,10 @@ export default function Header() {
     setshowOtherSearchBar(false);
     setshowSearchBar(true);
 
-    
+    const selectedLocation = currentLocation.current.innerText;
+    const allGuest = childCount + adultCount;
+    console.log(selectedLocation, allGuest);
+    return updateHomes(selectedLocation, allGuest);
   };
 
 
@@ -77,7 +83,7 @@ return (
         </div>
 
         <div className="w-[30%] h-full border-r-2 flex items-center justify-center" onClick={guestOptions}>
-            <button className="text-stone-300 text-sm font-normal">Add guests</button>
+            <button className="text-stone-300 text-sm font-normal">{formatGuestButtonText()}</button>
         </div>
 
         <div className="w-[20%] h-[55px]">
@@ -100,7 +106,7 @@ return (
           <div className="w-[80%] md:h-[60px] bg-white rounded-2xl shadow flex items-center md:flex-row flex-col">
             <div className="md:w-[34%] md:h-full md:border-r-2 flex md:justify-start pl-5 w-full border-b-2 md:border-0" onClick={locationList}>
               <label className="text-zinc-800 text-[9px] font-extrabold pt-3">LOCATIONS</label>
-              <button className="ml-[-55px] flex items-center md:pt-5 pt-7 md:pb-2 pb-2">{selectedLocation}</button>
+              <button ref={currentLocation} className="ml-[-55px] flex items-center md:pt-5 pt-7 md:pb-2 pb-2">{selectedLocation}</button>
               {showLocationOptions && (
               <div className="absolute md:mt-[80px] mt-[130px] md:ml-[-15px] ml-[-22px] bg-transparent rounded-md shadow-md md:w-[23%] w-[72%]">
                   <button 
@@ -117,7 +123,7 @@ return (
                   </button>
                   <button 
                     className="block w-full px-4 py-2 text-left hover:bg-gray-200" 
-                    onClick={() => handleLocationClick("Olulu, Finland")}
+                    onClick={() => handleLocationClick("Oulu, Finland")}
                   >
                     <FontAwesomeIcon icon={faLocationDot} style={{color: "#4f4f4f",}} /> Olulu, Finland
                   </button>
@@ -143,7 +149,7 @@ return (
                     <div className="flex items-center space-x-1 mt-2 gap-2.5">
                       <button 
                         className="w-[23px] h-[23px] rounded border border-zinc-500" 
-                        onClick={() => handleAdultCountChange(adultCount - 1)}
+                        onClick={() => handleAdultCountChange(adultCount > 0 && adultCount - 1)}
                         disabled={adultCount <= 1}
                       >
                         <FontAwesomeIcon icon={faMinus} style={{color: "#828282",}} />
