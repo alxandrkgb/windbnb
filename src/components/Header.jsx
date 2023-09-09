@@ -73,7 +73,7 @@ return (
     <div className=" flex flex-col md:flex-row justify-between min-h-[10vh] md:items-center px-5 md:px-[90px] pt-[30px]">
       {showSearchBar && (
       <div className=" mb-[3vh] md:mb-0">
-        <img src=".\src\assets\logo.png" alt="logo" />
+        <img src=".\public\logo.png" alt="logo" />
       </div>
       )}
       {showSearchBar ? (
