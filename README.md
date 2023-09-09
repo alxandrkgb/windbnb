@@ -36,7 +36,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/alxandrkgb/windbnb/blob/main/src/assets/screenshot.png)
+![screenshot](https://github.com/alxandrkgb/windbnb/blob/main/screenshot.png)
 
 
 ### Built With
