@@ -74,6 +74,7 @@ return (
       {showSearchBar && (
       <div className=" mb-[3vh] md:mb-0">
         <img src=".\public\logo.png" alt="logo" />
+        
       </div>
       )}
       {showSearchBar ? (
